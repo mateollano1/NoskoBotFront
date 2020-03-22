@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 mt-3" *ngFor="let item of controls; let i = index">
+            <label for="customRange1">{{item.name}}</label>
+            <input (change)="move(i, range.value)" type="range" min="500" step="1" max="2500" class="custom-range " id="customRange1 " #range>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-4">
+            <button (click)="handsUp()" class="btn btn-primary">Levantar manos</button>
+        </div>
+    </div>
+</div>
