@@ -19,4 +19,11 @@ export class ControllersService {
   handsUp(){
     return this.http.post(this.Url + "move/handsup",null)
   }
+  async listen(){
+    setTimeout(() => {
+      let sound = localStorage.getItem('command');
+      return this.http.post(this.Url + "listen/"+"sound",null)
+      // return localStorage.getItem('command');
+  }, 2500);
+  }
 }

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ControllersService } from '../../services/controllers.service';
 import { Limb } from '../../models/limb';
-
+import { async } from '@angular/core/testing';
+declare function init(): any;
 @Component({
   selector: 'app-bot-controller',
   templateUrl: './bot-controller.component.html',
@@ -38,6 +39,15 @@ export class BotControllerComponent implements OnInit {
   }
   handsUp(){
     this.controllersService.handsUp().subscribe(data =>{})
+  }
+
+  async initi(){
+    // console.log(init());
+    let va = await init()
+    console.log( this.controllersService.listen());
+   
+    
+    
   }
 
 }
